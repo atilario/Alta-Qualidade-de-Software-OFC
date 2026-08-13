@@ -37,14 +37,16 @@ F11                → Step into
 
 CRIAR VENV:
 
-python -m venv .venv                                                                                                          
-.\.venv\Scripts\activate 
- 
-(se der pau: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser )
+python -m venv game_2Dalien\.venv                                                                                                      
+game_2Dalien\.venv\Scripts\Activate
+
+(se der tilt: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser )
 
 passos pra rodar o alien:
 pip install pygame-ce       
 
 (da ctrl + s em tudo)
 
-python .\src\alien_invasion.py  
+cd game_2Dalien ---> vai p pasta do jogo
+
+python .\src\alien_invasion.py ---> inicia o jogo
