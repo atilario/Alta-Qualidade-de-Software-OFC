@@ -1,0 +1,104 @@
+# ⚡ Atalhos Essenciais – VS Code (Windows / Linux)
+
+## Rodar o jogo e verificar o código
+
+### Primeira vez
+
+No PowerShell, execute uma vez:
+
+```powershell
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install pygame-ce ruff mypy monkeytype
+```
+
+Se o PowerShell bloquear a ativação, execute uma vez e tente novamente:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+### Uso diário
+
+Abra um PowerShell novo e cole estas quatro linhas:
+
+```powershell
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
+.\.venv\Scripts\Activate.ps1
+$env:PYTHONPATH = "$PWD\src"
+python .\src\alien_invasion.py
+```
+
+O `PYTHONPATH` faz o programa encontrar `alien`, `ship` e `bullet`. Fique na pasta `game_2Dalien`, pois as imagens estão em `game_2Dalien\images`.
+
+### Ferramentas de qualidade
+
+Execute estes comandos na pasta `game_2Dalien`, com a venv ativa:
+
+```powershell
+ruff check .\src
+mypy .\src
+```
+
+`ruff` procura problemas de estilo e erros comuns. `mypy` verifica se os tipos usados no código são coerentes.
+
+### MonkeyType
+
+O `monkeytype` observa os tipos durante a execução. Ele não substitui o comando normal do jogo:
+
+```powershell
+monkeytype run .\src\alien_invasion.py
+```
+
+Para usar `monkeytype`, mantenha as duas primeiras linhas do uso diário e defina o `PYTHONPATH` antes do comando:
+
+```powershell
+$env:PYTHONPATH = "$PWD\src"
+```
+
+Depois de fechar o jogo, consulte os tipos coletados:
+
+```powershell
+monkeytype list-modules
+```
+
+Para sair da venv:
+
+```powershell
+Permaneça na pasta `game_2Dalien` e execute:
+```
+
+```powershell
+python .\src\alien_invasion.py
+```
+
+Não entre na pasta `src`, porque as imagens estão em `game_2Dalien\images`.
+
+### 6. Rodar com MonkeyType
+
+Ainda na pasta `game_2Dalien`, configure os imports e execute:
+
+```powershell
+$env:PYTHONPATH = "$PWD\src"
+monkeytype run .\src\alien_invasion.py
+```
+
+O `PYTHONPATH` permite que `alien_invasion.py` encontre módulos como `alien`, `ship` e `bullet`.
+
+### 7. Sequência rápida para as próximas vezes
+
+```powershell
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
+.\.venv\Scripts\Activate.ps1
+$env:PYTHONPATH = "$PWD\src"
+monkeytype run .\src\alien_invasion.py
+```
+
+Para sair da venv:
+
+```powershell
+deactivate
+```
+
+
