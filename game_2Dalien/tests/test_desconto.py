@@ -1,9 +1,3 @@
-import sys
-from pathlib import Path
-
-# Garante que o Python encontre a pasta 'src' tanto pelo pytest quanto ao rodar diretamente
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
 import pytest
 from src.desconto import DescontoNormal, DescontoVIP, DescontoPremium
 
@@ -37,7 +31,3 @@ def test_desconto_premium(valor, esperado):
     resultado = desconto.calcular(valor)
 
     assert resultado == esperado
-
-
-if __name__ == "__main__":
-    pytest.main([__file__, "-v"])

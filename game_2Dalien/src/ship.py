@@ -1,4 +1,5 @@
 import pygame
+from pathlib import Path
 from pygame.surface import Surface
 from settings import Settings
 
@@ -16,8 +17,9 @@ class Ship:
             self.screen.get_rect()
         )  # Rect é uma estrutura usada para representar posições e áreas retangulares
 
-        # Carrega a imagem da nave e obtém seu rect
-        self.image = pygame.image.load("images/ship.bmp")
+        # Carrega a imagem da nave e obtém seu rect (caminho seguro)
+        image_path = Path(__file__).resolve().parent.parent / "images" / "ship.bmp"
+        self.image = pygame.image.load(str(image_path) if image_path.exists() else "images/ship.bmp")
         # o pygame trata os elementos como retangulos, tornando seu processamento eficiente
         self.rect = self.image.get_rect()
         # Posiciona a nave no centro inferior da tela
