@@ -13,14 +13,14 @@ class FleetManager:
         self.aliens = pygame.sprite.Group()
         self.alien_class = alien_class
 
-    def _create_alien(self, alien_number: list, alien_width: int, alien_height: int):
+    def _create_alien(self, alien_number: int, row_number: int, alien_width: int, alien_height: int):
         """Cria um alienígena e o posiciona na linha."""
         alien = self.alien_class(self.screen, self.settings)
         alien_width = alien.rect.width
-        alien.x = alien_width + 2 * alien_width * alien_number[0]
+        alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = alien.x
         alien_height = alien.rect.height
-        alien.y = alien_height + 2 * alien_height * alien_number[1]
+        alien.y = alien_height + 2 * alien_height * row_number
         alien.rect.y = alien.y
         self.aliens.add(alien)
 

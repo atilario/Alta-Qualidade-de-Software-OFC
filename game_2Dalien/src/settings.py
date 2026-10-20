@@ -19,6 +19,7 @@ class Settings:
 
         # Configurações do alien
         self.alien_speed = 0.3  # Velocidade dos alienígenas
+        self.fast_alien_speed_factor = 0.6  # Velocidade do alienígena rápido (FastAlien)
         self.fleet_drop_speed = (
             10  # Velocidade com que a frota de alienígenas desce em direção à nave
         )
