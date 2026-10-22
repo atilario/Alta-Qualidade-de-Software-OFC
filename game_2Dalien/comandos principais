@@ -10,7 +10,7 @@ No PowerShell, execute uma vez:
 cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install pygame-ce ruff mypy monkeytype
+python -m pip install pygame-ce ruff mypy monkeytype pytest pytest-mock pytest-html coverage
 ```
 
 Se o PowerShell bloquear a ativação, execute uma vez e tente novamente:
@@ -101,4 +101,31 @@ Para sair da venv:
 deactivate
 ```
 
+---
 
+## 🧪 Testes Automatizados e Cobertura (Slides)
+
+Com a `.venv` ativada, na raiz ou na pasta `game_2Dalien`:
+
+### 1. Rodar os testes unitários (pytest)
+
+```powershell
+pytest
+pytest -v
+```
+
+### 2. Gerar relatório visual em HTML
+
+```powershell
+pytest --html=relatorio.html
+```
+
+### 3. Medir cobertura de código (Coverage)
+
+```powershell
+coverage run -m pytest
+coverage report
+coverage html
+```
+
+> **Atenção:** A pasta `htmlcov` e o arquivo `relatorio.html` não devem ser enviados ao repositório (já configurados no `.gitignore`).

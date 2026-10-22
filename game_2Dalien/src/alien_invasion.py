@@ -54,6 +54,6 @@ class AlienInvasion:
             self.game_renderer._render_screen()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     alien_invasion = AlienInvasion()
     alien_invasion.run_game()
