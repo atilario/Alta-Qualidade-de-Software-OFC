@@ -1,5 +1,31 @@
 # ⚡ Atalhos Essenciais – VS Code (Windows / Linux)
 
+## 🚀 Comando rápido (1 linha para copiar e colar)
+
+Se o terminal já estiver aberto na raiz do projeto (`alta qualidade soft`):
+
+```powershell
+cd game_2Dalien; .\.venv\Scripts\python.exe .\src\alien_invasion.py
+```
+
+Se já estiver dentro da pasta `game_2Dalien`:
+
+```powershell
+.\.venv\Scripts\python.exe .\src\alien_invasion.py
+```
+
+De **qualquer lugar** no PowerShell (caminho completo):
+
+```powershell
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\projetos github\alta qualidade soft\game_2Dalien"; .\.venv\Scripts\python.exe .\src\alien_invasion.py
+```
+
+testes stubs mocks e afins
+
+.\game_2Dalien\.venv\Scripts\python.exe -m pytest game_2Dalien/tests/test_doubles.py -v
+
+---
+
 ## Rodar o jogo e verificar o código
 
 ### Primeira vez
@@ -7,7 +33,7 @@
 No PowerShell, execute uma vez:
 
 ```powershell
-cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\projetos github\alta qualidade soft\game_2Dalien"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install pygame-ce ruff mypy monkeytype pytest pytest-mock pytest-html coverage
@@ -24,7 +50,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Abra um PowerShell novo e cole estas quatro linhas:
 
 ```powershell
-cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\projetos github\alta qualidade soft\game_2Dalien"
 .\.venv\Scripts\Activate.ps1
 $env:PYTHONPATH = "$PWD\src"
 python .\src\alien_invasion.py
@@ -89,7 +115,7 @@ O `PYTHONPATH` permite que `alien_invasion.py` encontre módulos como `alien`, `
 ### 7. Sequência rápida para as próximas vezes
 
 ```powershell
-cd "C:\Users\ATILA\OneDrive\Área de Trabalho\alta qualidade soft\game_2Dalien"
+cd "C:\Users\ATILA\OneDrive\Área de Trabalho\projetos github\alta qualidade soft\game_2Dalien"
 .\.venv\Scripts\Activate.ps1
 $env:PYTHONPATH = "$PWD\src"
 monkeytype run .\src\alien_invasion.py
